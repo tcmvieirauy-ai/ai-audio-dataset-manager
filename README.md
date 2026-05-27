@@ -12,3 +12,5 @@ The pipeline:
 Still tuning the QA thresholds and category matching logic.
 
 Tested on Windows for now.
+
+This can be used for projects of TTS
