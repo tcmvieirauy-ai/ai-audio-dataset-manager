@@ -63,14 +63,21 @@ CATEGORIES = {
     ]
 }
 
-for primary, secondary_list in CATEGORIES.items():
 
-    for secondary in secondary_list:
+def main():
+    print("\nCriando estrutura de pastas do incoming...\n")
 
-        folder = INCOMING / primary / secondary
+    total = 0
 
-        folder.mkdir(parents=True, exist_ok=True)
+    for primary, secondary_list in CATEGORIES.items():
+        for secondary in secondary_list:
+            folder = INCOMING / primary / secondary
+            folder.mkdir(parents=True, exist_ok=True)
+            print(f"Criada: incoming/{primary}/{secondary}")
+            total += 1
 
-        print(f"Criada: {folder}")
+    print(f"\nTotal de pastas criadas/verificadas: {total}")
 
-print("\nTodas as pastas foram criadas.")
+
+if __name__ == "__main__":
+    main()

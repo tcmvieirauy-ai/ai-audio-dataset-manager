@@ -423,10 +423,10 @@ def create_segments(
         secondary
     )
 
-    target_folder.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    if not target_folder.exists():
+        print(f"ERRO: pasta não existe: {target_folder}")
+        return 0
+    
 
     duration = get_audio_duration_seconds(
         input_audio

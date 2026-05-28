@@ -234,9 +234,9 @@ def process_file(audio_path, primary, secondary):
     )
 
     if status == "APPROVED" and AUTO_APPROVE:
-        output_folder = APPROVED / primary
+        output_folder = APPROVED / primary / secondary
     else:
-        output_folder = REVIEW / primary
+        output_folder = REVIEW / primary / secondary
 
     processed_folder = PROCESSED / primary / secondary
 
