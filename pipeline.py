@@ -19,9 +19,9 @@ APPROVED = BASE_DIR / "approved" / LANGUAGE_FOLDER
 LOGS = BASE_DIR / "logs"
 
 #transcription quality rules
-MIN_WORDS = 5
-MAX_NO_SPEECH_PROB = 0.75
-MIN_AVG_LOGPROB = -1.20
+MIN_WORDS = 8
+MAX_NO_SPEECH_PROB = 0.90
+MIN_AVG_LOGPROB = -1.50
 
 #audio quality rules
 MIN_DURATION_SECONDS = 10

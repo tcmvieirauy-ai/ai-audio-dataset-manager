@@ -49,6 +49,9 @@ CURATED_SOURCES = [
         "secondary": "InspirationRecord",
 
         "url": "https://www.youtube.com/playlist?list=PLsRNoUx8w3rOwHx4kVJL5ksS9vTxj5hXn",
+        "url": "https://youtu.be/L4YiRb1DYa8?si=7l3IScmDtkrlSF3Y", 
+        "url": "https://www.youtube.com/watch?v=IRatXo2zit0&list=PLdlKx3uNkxdHBzm7DeWfMEz_4PgftQWJ5",
+        "url": "https://www.youtube.com/watch?v=m5pTiiwnukk&list=PLyRcl7Q37-DU15YazEfp4NefTCWvp_MOi",
 
         "required_keywords": [
             "tedx",
@@ -75,6 +78,9 @@ CURATED_SOURCES = [
         "secondary": "LectureTrainingRecording",
 
         "url": "https://www.youtube.com/playlist?list=PLsRNoUx8w3rOwHx4kVJL5ksS9vTxj5hXn",
+        "url": "https://youtu.be/L4YiRb1DYa8?si=7l3IScmDtkrlSF3Y", 
+        "url": "https://www.youtube.com/watch?v=IRatXo2zit0&list=PLdlKx3uNkxdHBzm7DeWfMEz_4PgftQWJ5",
+        "url": "https://www.youtube.com/watch?v=m5pTiiwnukk&list=PLyRcl7Q37-DU15YazEfp4NefTCWvp_MOi",
 
         "required_keywords": [
             "tedx",
@@ -99,6 +105,9 @@ CURATED_SOURCES = [
         "secondary": "VoiceCreation",
 
         "url": "https://www.youtube.com/playlist?list=PLsRNoUx8w3rOwHx4kVJL5ksS9vTxj5hXn",
+        "url": "https://youtu.be/L4YiRb1DYa8?si=7l3IScmDtkrlSF3Y", 
+        "url": "https://www.youtube.com/watch?v=IRatXo2zit0&list=PLdlKx3uNkxdHBzm7DeWfMEz_4PgftQWJ5",
+        "url": "https://www.youtube.com/watch?v=m5pTiiwnukk&list=PLyRcl7Q37-DU15YazEfp4NefTCWvp_MOi",
 
         "required_keywords": [
             "narração",
