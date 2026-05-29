@@ -18,12 +18,12 @@ REVIEW = BASE_DIR / "review" / LANGUAGE_FOLDER
 APPROVED = BASE_DIR / "approved" / LANGUAGE_FOLDER
 LOGS = BASE_DIR / "logs"
 
-# TRANSCRIPTION QUALITY RULES
+#transcription quality rules
 MIN_WORDS = 5
 MAX_NO_SPEECH_PROB = 0.75
 MIN_AVG_LOGPROB = -1.20
 
-# AUDIO QUALITY RULES
+#audio quality rules
 MIN_DURATION_SECONDS = 10
 MAX_DURATION_SECONDS = 90
 MIN_RMS_VOLUME = 0.002
@@ -165,6 +165,18 @@ def transcription_quality_check(transcript, avg_no_speech, avg_logprob):
 
     return "APPROVED", "Passed transcription quality rules"
 
+#transcripition quality rules
+MIN_WORDS = 8
+MAX_NO_SPEECH_PROB = 0.90
+MIN_AVG_LOGPROB = -1.50
+
+#audio quality rules
+MIN_DURATION_SECONDS = 8
+MAX_DURATION_SECONDS = 90
+MIN_RMS_VOLUME = 0.001
+MIN_ACTIVE_AUDIO_RATIO = 0.15
+MAX_CLIPPING_RATIO = 0.05
+SILENCE_THRESHOLD = 0.01
 
 def final_quality_decision(
     audio_status,
@@ -172,13 +184,23 @@ def final_quality_decision(
     transcription_status,
     transcription_reason
 ):
-    if audio_status == "REVIEW":
-        return "REVIEW", audio_reason
-
+    # If the transcription failed, send to review
     if transcription_status == "REVIEW":
         return "REVIEW", transcription_reason
 
-    return "APPROVED", "Passed audio and transcription quality rules"
+    # If the transcription is good enough send to approved
+    if audio_status == "REVIEW":
+        light_audio_issues = [
+            "Volume too low",
+            "Too much silence"
+        ]
+
+        if audio_reason in light_audio_issues:
+            return "APPROVED", f"Transcription passed; light audio issue: {audio_reason}"
+
+        return "REVIEW", audio_reason
+
+    return "APPROVED", "Passed transcription and usable audio rules"
 
 
 def write_log(

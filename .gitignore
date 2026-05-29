@@ -216,3 +216,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project generated folders
+incoming/
+processed/
+approved/
+review/
+temp_downloads/
+logs/
+
+# Generated dataset files
+*.mp3
+*.mp4
+*.m4a
+*.wav
+*.aac
+*.flac
+*.ogg
+*.txt
+*.csv 
