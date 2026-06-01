@@ -155,7 +155,7 @@ def transcription_quality_check(transcript, avg_no_speech, avg_logprob):
 #transcripition quality rules
 MIN_WORDS = 8
 MAX_NO_SPEECH_PROB = 0.90
-MIN_AVG_LOGPROB = -1.50
+MIN_AVG_LOGPROB = -2.00
 
 #audio quality rules
 MIN_DURATION_SECONDS = 8
