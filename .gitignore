@@ -12,6 +12,7 @@ build/
 develop-eggs/
 dist/
 downloads/
+documentation/
 eggs/
 .eggs/
 lib/
@@ -235,3 +236,6 @@ logs/
 *.ogg
 *.txt
 *.csv 
+
+# # # # # # # 
+
