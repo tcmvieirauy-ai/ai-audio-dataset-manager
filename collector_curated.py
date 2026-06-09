@@ -5,9 +5,11 @@
 from pathlib import Path
 import subprocess
 import json
+import sys
 import time
 import csv
 import re
+import sys
 
 BASE_DIR = Path(__file__).parent
 
@@ -24,8 +26,8 @@ LOGS.mkdir(parents=True, exist_ok=True)
 # FFMPEG LOCAL PATH
 # ================================
 
-FFMPEG = r"C:\ffm\bin\ffmpeg.exe"
-FFPROBE = r"C:\ffm\bin\ffprobe.exe"
+FFMPEG = "/usr/bin/ffmpeg"
+FFPROBE = "/usr/bin/ffprobe"
 
 # ================================
 # SETTINGS
@@ -209,7 +211,7 @@ def metadata_matches_category(
 def get_playlist_entries(source_url):
 
     command = [
-        "py", "-m", "yt_dlp",
+        sys.executable, "-m", "yt_dlp",
 
         "--flat-playlist",
 
@@ -259,7 +261,7 @@ def get_playlist_entries(source_url):
 def get_video_metadata(video_url):
 
     command = [
-        "py", "-m", "yt_dlp",
+        sys.executable, "-m", "yt_dlp",
 
         "--dump-json",
 
@@ -302,7 +304,7 @@ def download_audio(video_url, video_id):
     )
 
     command = [
-        "py", "-m", "yt_dlp",
+        sys.executable, "-m", "yt_dlp",
 
         video_url,
 
@@ -312,7 +314,7 @@ def download_audio(video_url, video_id):
         str(ARCHIVE),
 
         "--ffmpeg-location",
-        r"C:\ffm\bin",
+        r"/usr/bin",
 
         "-f",
         "bestaudio[ext=m4a]/bestaudio/best",
